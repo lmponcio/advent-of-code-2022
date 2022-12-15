@@ -116,10 +116,6 @@ with open("day_07/input.txt") as file:
             scanner.add_file(size)
 
 
-# for dir in summary:
-#     size = summary[dir]
-#     if size <= 100000:
-#         result += size
 summary = scanner.get_summary()
 available = TOTAL_DISK - summary["/"]
 to_free = NEEDED_SPACE - available
@@ -129,12 +125,6 @@ for size in sizes_list:
     if size > to_free and size < size_to_remove:
         size_to_remove = size
 
-print(summary)
-print(sizes_list)
-print("available:", available)
-print("needed   :", NEEDED_SPACE)
-print("to-free  :", NEEDED_SPACE - available)
-
 
 print("Answer:", size_to_remove)
-# correct answer:
+# correct answer: 2086088
